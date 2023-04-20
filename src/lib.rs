@@ -172,30 +172,30 @@ pub use error::Error;
 pub use node::*;
 pub use parser::Parser;
 
-/// Parse the given [`proc-macro::TokenStream`] into a [`Node`] tree.
-///
-/// [`proc-macro::TokenStream`]: https://doc.rust-lang.org/proc_macro/struct.TokenStream.html
-/// [`Node`]: struct.Node.html
-pub fn parse(tokens: proc_macro::TokenStream) -> Result<Vec<Node>> {
-    let parser = move |input: ParseStream| Parser::new(ParserConfig::default()).parse(input);
+// /// Parse the given [`proc-macro::TokenStream`] into a [`Node`] tree.
+// ///
+// /// [`proc-macro::TokenStream`]: https://doc.rust-lang.org/proc_macro/struct.TokenStream.html
+// /// [`Node`]: struct.Node.html
+// pub fn parse(tokens: proc_macro::TokenStream) -> Result<Vec<Node>> {
+//     let parser = move |input: ParseStream| Parser::new(ParserConfig::default()).parse(input);
 
-    parser.parse(tokens)
-}
+//     parser.parse(tokens)
+// }
 
-/// Parse the given [`proc-macro::TokenStream`] into a [`Node`] tree with custom
-/// [`ParserConfig`].
-///
-/// [`proc-macro::TokenStream`]: https://doc.rust-lang.org/proc_macro/struct.TokenStream.html
-/// [`Node`]: struct.Node.html
-/// [`ParserConfig`]: struct.ParserConfig.html
-pub fn parse_with_config(
-    tokens: proc_macro::TokenStream,
-    config: ParserConfig,
-) -> Result<Vec<Node>> {
-    let parser = move |input: ParseStream| Parser::new(config).parse(input);
+// /// Parse the given [`proc-macro::TokenStream`] into a [`Node`] tree with custom
+// /// [`ParserConfig`].
+// ///
+// /// [`proc-macro::TokenStream`]: https://doc.rust-lang.org/proc_macro/struct.TokenStream.html
+// /// [`Node`]: struct.Node.html
+// /// [`ParserConfig`]: struct.ParserConfig.html
+// pub fn parse_with_config(
+//     tokens: proc_macro::TokenStream,
+//     config: ParserConfig,
+// ) -> Result<Vec<Node>> {
+//     let parser = move |input: ParseStream| Parser::new(config).parse(input);
 
-    parser.parse(tokens)
-}
+//     parser.parse(tokens)
+// }
 
 /// Parse the given [`proc-macro2::TokenStream`] into a [`Node`] tree.
 ///
